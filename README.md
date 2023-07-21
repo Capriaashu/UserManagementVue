@@ -63,6 +63,54 @@ npm run build
 npm run test:unit
 ```
 
+API Requests
+The application makes HTTP requests to a backend API using the http-common module. The UserDataService class provides methods for interacting with the backend API to perform CRUD operations on employee data.
+
+Retrieve all users:
+javascript
+Copy code
+UserDataService.getAll().then(response => {
+  // Handle the response
+}).catch(error => {
+  // Handle the error
+});
+Get user based on ID:
+javascript
+Copy code
+UserDataService.get(id).then(response => {
+  // Handle the response
+}).catch(error => {
+  // Handle the error
+});
+Create a new user:
+javascript
+Copy code
+const userData = { /* Employee data object */ };
+UserDataService.create(userData).then(response => {
+  // Handle the response
+}).catch(error => {
+  // Handle the error
+});
+Update an existing user:
+javascript
+Copy code
+const userId = 1; // Replace with the ID of the user to be updated
+const userData = { /* Updated employee data object */ };
+UserDataService.update(userId, userData).then(response => {
+  // Handle the response
+}).catch(error => {
+  // Handle the error
+});
+Delete a user:
+javascript
+Copy code
+const userId = 1; // Replace with the ID of the user to be deleted
+UserDataService.delete(userId).then(response => {
+  // Handle the response
+}).catch(error => {
+  // Handle the error
+});
+
 ### Acknowledgments
 Special thanks to the Vue.js, Vuex, and Vue Router teams for their awesome work in building these amazing libraries.
 Thanks to the Bootstrap and Font Awesome communities for providing useful tools and resources for web development.
