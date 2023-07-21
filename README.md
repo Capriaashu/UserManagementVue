@@ -22,28 +22,34 @@ Make sure you have Node.js and npm installed on your system.
 
 ### Installation
 Clone the repository:
-
+```sh
 git clone https://github.com/Capriaashu/UserManagementVue.git
-Navigate to the project directory:
+```
 
+Navigate to the project directory:
+```sh
 cd UserManagementVue
+```
+
 
 Install dependencies:
-
+```sh
 npm install
+```
+
 
 ### Compile and Hot-Reload for Development
 Start the development server:
-
+```sh
 npm run dev
+```
+
 The application will be accessible at http://localhost:5173 in your web browser.
 
 Use the application to manage User, view the list of User, add new User, and edit User information.
 
 Deployment
 To deploy the application for production, build the project using:
-
-
 
 ### Compile and Minify for Production
 
