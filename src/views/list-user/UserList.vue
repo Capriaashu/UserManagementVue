@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import UserDataService from "../services/UserDataService";
-import Table from "@/components/TableComponent.vue";
-import Navbar from "@/components/Navbar.vue";
+import UserDataService from "../../services/UserDataService";
+import Table from "../../components/TableComponent.vue";
+import Navbar from "../../components/Navbar.vue";
 
 export default {
     name: "users-list",
@@ -104,3 +104,4 @@ export default {
     },
 };
 </script>
+

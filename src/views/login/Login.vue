@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import UserDataService from "../../services/UserDataService";
+import { mapActions } from 'vuex';
 export default {
     name: 'Login',
     data() {
@@ -35,18 +35,17 @@ export default {
     };
   },
   methods: {
+    ...mapActions("auth", ["login"]),
     async onClickLogin() {
       try {
-        const response = await UserDataService.getAll();
-        const userList = response.data;
-        const user = userList.find(
-          (element) =>
-            element.username === this.username && element.password === this.password
-        );
-        this.isUserValid = !!user; // Set validity based on user existence
-        this.error = this.isUserValid ? '' : 'Incorrect Username or Password';
+        const user = await this.login({
+          username: this.username,
+          password: this.password,
+        });
+        this.isUserValid = !!user;
+        this.error = this.isUserValid ? "" : "Incorrect Username or Password";
         if (this.isUserValid) {
-          this.$router.push({ name: 'usersList' });
+          this.$router.push({ name: "usersList" });
         }
       } catch (error) {
         console.error(error);

@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import UserDataService from "../services/UserDataService";
+import UserDataService from "../../services/UserDataService";
 import Navbar from '@/components/Navbar.vue';
 
 export default {
