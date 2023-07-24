@@ -109,7 +109,7 @@ delete(id) {
 
 ### Auth Module
 Introduction
-The auth module is responsible for handling user authentication within the Employee Management Application. It provides actions and mutations to manage user login and logout functionality, as well as getters to retrieve the user's authentication status and information.
+The auth module is responsible for handling user authentication within the User Management Application. It provides actions and mutations to manage user login and logout functionality, as well as getters to retrieve the user's authentication status and information.
 
 
 ### Acknowledgments
