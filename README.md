@@ -116,5 +116,9 @@ The auth module is responsible for handling user authentication within the Emplo
 Special thanks to the Vue.js, Vuex, and Vue Router teams for their awesome work in building these amazing libraries.
 Thanks to the Bootstrap and Font Awesome communities for providing useful tools and resources for web development.
 
+### Sample Data for User Action
+```sh
+UserManagementVue\src\assets\sample-data.json
+```
 
 
