@@ -110,6 +110,8 @@ delete(id) {
 ### Auth Module
 Introduction
 The auth module is responsible for handling user authentication within the Employee Management Application. It provides actions and mutations to manage user login and logout functionality, as well as getters to retrieve the user's authentication status and information.
+
+
 ### Acknowledgments
 Special thanks to the Vue.js, Vuex, and Vue Router teams for their awesome work in building these amazing libraries.
 Thanks to the Bootstrap and Font Awesome communities for providing useful tools and resources for web development.
