@@ -13,7 +13,6 @@
                 </li>
                 <li class="nav-item">
                     <router-link class="btn btn-outline-primary" to="/" @click="handleLogout">Logout</router-link>
-                 <!--   <button class="btn btn-outline-primary" @click="logout">Logout</button> -->
                 </li>
             </ul>
         </div>
@@ -28,9 +27,10 @@ export default {
     methods: {
         ...mapActions("auth", ["logout"]),
         handleLogout() {
-            this.logout();
-            // You can also redirect the user to the login page after logout if needed
-            this.$router.push({ name: "login-user" });
+            this.logout().then(() => {
+                // Redirect to the login page
+                this.$router.push({ name: "login-user" });
+            });
         },
     },
 }

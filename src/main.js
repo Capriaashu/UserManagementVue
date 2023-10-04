@@ -5,6 +5,7 @@ import router from './router/router';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from '@fortawesome/free-solid-svg-icons';
+
 import store from './stores/index'; // Import the Vuex store instance
 
 library.add(fas);

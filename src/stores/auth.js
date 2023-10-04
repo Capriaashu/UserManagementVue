@@ -8,6 +8,9 @@ const mutations = {
   LOGIN(state, user) {
     state.user = user;
   },
+  LOGOUT(state) {
+    state.user = null;
+  },
 };
 
 const actions = {
@@ -27,6 +30,9 @@ const actions = {
     } catch (error) {
       throw error;
     }
+  },
+  async logout({ commit }) {
+    commit("LOGOUT");
   },
 };
 

@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="col-md-12 mt-3">
-        <Table :fields="fields" :dataList="filteredUserList" @deleteRowData="deleteRowData" @editRowData="editRowData" />
+        <Table :fields="fields" :dataList="filteredUserList" :initialSortField="sortedField" @deleteRowData="deleteRowData" @editRowData="editRowData" />
     </div>
 </div>
 </template>
@@ -26,10 +26,11 @@ export default {
         Navbar,
     },
     data() {
-        const fields = ["id", "name", "username", "password", "email", "status", "country", "gender"];
+        const fields = ["id", "name", "username", "email", "status", "country", "gender"];
         return {
             userList: [],
             fields,
+            sortedField: "name",
             filterCriteria: "",
             filteredUserList: []
         };

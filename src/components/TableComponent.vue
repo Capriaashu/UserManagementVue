@@ -1,29 +1,29 @@
 <template>
-<div class="full-page-layout">
-    <div class="mh-90">
-        <table id="tableComponent" class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <!-- loop through each value of the fields to get the table header -->
-                    <th v-for="field in fields" :key='field' @click="sortTable(field)">
-                        {{camalize(field)}}
-                        <fa :icon="getSortIcon(field)"></fa>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Loop through the list get the each  data -->
-                <tr v-for="item in dataList" :key='item'>
-                    <td v-for="field in fields" :key='field'>{{item[field]}}</td>
-                    <td>
-                        <button @click="editRowData(item.id)">Edit</button>
-                        <button @click="deleteRowData(item.id)">Delete</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="full-page-layout">
+        <div class="mh-90">
+            <table id="tableComponent" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <!-- loop through each value of the fields to get the table header -->
+                        <th v-for="field in fields" :key="field" @click="sortTable(field)">
+                            {{ camalize(field) }}
+                            <fa :icon="sortIcons[field]" />
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Loop through the list get the each  data -->
+                    <tr v-for="item in dataList" :key='item'>
+                        <td v-for="field in fields" :key='field'>{{ item[field] }}</td>
+                        <td>
+                            <button @click="editRowData(item.id)">Edit</button>
+                            <button @click="deleteRowData(item.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -72,10 +72,16 @@ export default {
                 const aValue = a[this.sortField];
                 const bValue = b[this.sortField];
 
-                if (this.sortDirection === 'asc') {
-                    return aValue.localeCompare(bValue);
+                if (typeof aValue === 'number' && typeof bValue === 'number') {
+                    // If both values are numbers, perform numeric comparison
+                    return this.sortDirection === 'asc' ? aValue - bValue : bValue - aValue;
                 } else {
-                    return bValue.localeCompare(aValue);
+                    // If either value is not a number, perform a string comparison
+                    if (this.sortDirection === 'asc') {
+                        return String(aValue).localeCompare(String(bValue));
+                    } else {
+                        return String(bValue).localeCompare(String(aValue));
+                    }
                 }
             });
         },
@@ -86,7 +92,23 @@ export default {
                 return '';
             }
         },
-    }
+        getDefaultSortIcon() {
+            return 'arrow-up-a-z'; // Replace 'default-icon' with the actual default icon name
+        },
+    },
+    computed: {
+        sortIcons() {
+            const icons = {};
+            for (const field of this.fields) {
+                if (this.sortField === field) {
+                    icons[field] = this.sortDirection === "asc" ? "arrow-up-a-z" : "arrow-down-z-a";
+                } else {
+                    icons[field] = "arrow-up-a-z";
+                }
+            }
+            return icons;
+        },
+    },
 }
 </script>
 

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import UserDataService from "../../services/UserDataService";
+import UserDataService from '../../services/UserDataService';
 export default {
     name: 'SignUp',
     data() {
@@ -41,7 +41,6 @@ export default {
     },
     methods: {
         onClickSignUp(event) {
-            debugger;
             var data = {
                 name: "",
                 username: this.user.username,
@@ -53,8 +52,7 @@ export default {
                 UserDataService.create(data)
                     .then(response => {
                         this.user.id = response.data.id;
-                        console.log(response.data);
-                        this.submitted = true;
+                        this.$router.push({ name: "login-user" });
                     })
                     .catch(e => {
                         console.log(e);

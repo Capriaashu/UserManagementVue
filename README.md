@@ -120,5 +120,17 @@ Thanks to the Bootstrap and Font Awesome communities for providing useful tools 
 ```sh
 UserManagementVue\src\assets\sample-data.json
 ```
+### Install JSON Server
+```sh
+npm install -g json-server
+```
+### Navigate to the project path to get the sample-data.json file and then run the below command
+```sh
+json-server --watch sample-data.json
+```
+
+
+
+
 
 

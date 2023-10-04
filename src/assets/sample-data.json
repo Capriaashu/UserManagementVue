@@ -1,88 +1,118 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "Leanne Graham",
-        "username": "Bret",
-        "password": "pass",
-        "email": "Sincere@april.biz",
-        "active": false,
-        "hobbies": true,
-        "country": "Canada",
-        "gender": "Male"
-      },
-      {
-        "id": 2,
-        "name": "Ervin Howell",
-        "username": "Antonette",
-        "password": "pass",
-        "email": "Shanna@melissa.tv"
-      },
-      {
-        "id": 3,
-        "name": "Clementine Bauch",
-        "username": "Samantha",
-        "password": "pass",
-        "email": "Nathan@yesenia.net"
-      },
-      {
-        "id": 4,
-        "name": "Patricia Lebsack",
-        "username": "Karianne",
-        "password": "pass",
-        "email": "Julianne.OConner@kory.org",
-        "hobbies": true,
-        "country": "UK",
-        "gender": "Male"
-      },
-      {
-        "id": 5,
-        "name": "Chelsey Dietrich",
-        "username": "Kamren",
-        "password": "pass",
-        "email": "Lucio_Hettinger@annie.ca"
-      },
-      {
-        "id": 6,
-        "name": "Mrs. Dennis Schulist",
-        "username": "Leopoldo_Corkery",
-        "password": "pass",
-        "email": "Karley_Dach@jasper.info"
-      },
-      {
-        "id": 7,
-        "name": "Kurtis Weissnat",
-        "username": "Elwyn.Skiles",
-        "password": "pass",
-        "email": "Telly.Hoeger@billy.biz"
-      },
-      {
-        "id": 8,
-        "name": "Nicholas Runolfsdottir V",
-        "username": "Maxime_Nienow",
-        "password": "pass",
-        "email": "Sherwood@rosamond.me"
-      },
-      {
-        "id": 9,
-        "name": "Glenna Reichert",
-        "username": "Delphine",
-        "password": "pass",
-        "email": "Chaim_McDermott@dana.io"
-      },
-      {
-        "id": 10,
-        "name": "Clementina DuBuque",
-        "username": "Moriah.Stanton",
-        "password": "pass",
-        "email": "Rey.Padberg@karina.biz"
-      },
-      {
-        "name": "Ashutosh Pandey",
-        "username": "ashu",
-        "password": "pass",
-        "email": "ashu@rosamond.me",
-        "id": 11
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "password": "pass",
+      "email": "Sincere@april.biz",
+      "active": false,
+      "country": "Mexico",
+      "gender": "Male"
+    },
+    {
+      "id": 2,
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "password": "pass",
+      "email": "Shanna@melissa.tv",
+      "gender": "Male",
+      "country": "Russia",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "password": "pass",
+      "email": "Nathan@yesenia.net",
+      "gender": "Female",
+      "country": "Greece"
+    },
+    {
+      "id": 4,
+      "name": "Patricia Lebsack",
+      "username": "Karianne",
+      "password": "pass",
+      "email": "Julianne.OConner@kory.org",
+      "country": "UK",
+      "gender": "Male"
+    },
+    {
+      "id": 5,
+      "name": "Chelsey Dietrich",
+      "username": "Kamren",
+      "password": "pass",
+      "email": "Lucio_Hettinger@annie.ca",
+      "country": "China",
+      "gender": "Male"
+    },
+    {
+      "id": 6,
+      "name": "Mrs. Dennis Schulist",
+      "username": "Leopoldo_Corkery",
+      "password": "pass",
+      "email": "Karley_Dach@jasper.info",
+      "country": "Denmark",
+      "gender": "Male"
+    },
+    {
+      "id": 7,
+      "name": "Kurtis Weissnat",
+      "username": "Elwyn.Skiles",
+      "password": "pass",
+      "email": "Telly.Hoeger@billy.biz",
+      "gender": "Male",
+      "active": true,
+      "country": "Australia"
+    },
+    {
+      "id": 8,
+      "name": "Nicholas Runolfsdottir V",
+      "username": "Maxime_Nienow",
+      "password": "pass",
+      "email": "Sherwood@rosamond.me",
+      "gender": "Female",
+      "country": "Australia"
+    },
+    {
+      "id": 9,
+      "name": "Glenna Reichert",
+      "username": "Delphine",
+      "password": "pass",
+      "email": "Chaim_McDermott@dana.io",
+      "gender": "Female",
+      "active": true,
+      "country": "Canada"
+    },
+    {
+      "id": 10,
+      "name": "Clementina DuBuque",
+      "username": "Moriah.Stanton",
+      "password": "pass",
+      "email": "Rey.Padberg@karina.biz",
+      "gender": "Male",
+      "country": "Switzerland"
+    },
+    {
+      "name": "Ashutosh Pandey",
+      "username": "ashu",
+      "password": "pass",
+      "email": "ashu@rosamond.me",
+      "id": 11,
+      "gender": "Male",
+      "country": "India",
+      "active": true
+    },
+    {
+      "name": "Ashutosh Pandey",
+      "username": "ashutosh",
+      "password": "pass",
+      "email": "ashu@gmail.com",
+      "active": true,
+      "id": 12,
+      "country": "India",
+      "gender": "Male"
+    }
+  ]
+}

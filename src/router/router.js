@@ -6,7 +6,7 @@ const routes= [
     path: '/',
     name: 'signup',
     component: () => import('../views/login/SignUp.vue'), // Lazily load the component
-    meta: { requiresAuth: true },
+   // meta: { requiresAuth: true },
   },
   {
     path: '/login-user',
