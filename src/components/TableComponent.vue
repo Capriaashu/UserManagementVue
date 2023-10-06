@@ -85,16 +85,6 @@ export default {
                 }
             });
         },
-        getSortIcon(field) {
-            if (this.sortField === field) {
-                return this.sortDirection === 'asc' ? 'arrow-up-a-z' : 'arrow-down-z-a';
-            } else {
-                return '';
-            }
-        },
-        getDefaultSortIcon() {
-            return 'arrow-up-a-z'; // Replace 'default-icon' with the actual default icon name
-        },
     },
     computed: {
         sortIcons() {

@@ -1,17 +1,19 @@
 <template>
-<div class="vue-tempalte">
-    <Navbar />
+    <div class="vue-tempalte">
+        <Navbar />
 
-    <div class="col-md-12 mt-3">
-        <div class="input-group mb-3 w-50">
-            <input type="text" class="form-control" placeholder="Search" v-model="filterCriteria" @input="filteredData" />
-            <button class="btn btn-secondary" type="button" @click="clearFilter">Clear</button>
+        <div class="col-md-12 mt-3">
+            <div class="input-group mb-3 w-50">
+                <input type="text" class="form-control" placeholder="Search" v-model="filterCriteria"
+                    @input="filteredData" />
+                <button class="btn btn-secondary" type="button" @click="clearFilter">Clear</button>
+            </div>
+        </div>
+        <div class="col-md-12 mt-3">
+            <Table :fields="fields" :dataList="filteredUserList" @deleteRowData="deleteRowData"
+                @editRowData="editRowData" />
         </div>
     </div>
-    <div class="col-md-12 mt-3">
-        <Table :fields="fields" :dataList="filteredUserList" :initialSortField="sortedField" @deleteRowData="deleteRowData" @editRowData="editRowData" />
-    </div>
-</div>
 </template>
 
 <script>
@@ -30,9 +32,7 @@ export default {
         return {
             userList: [],
             fields,
-            sortedField: "name",
             filterCriteria: "",
-            filteredUserList: []
         };
     },
     methods: {
@@ -40,7 +40,6 @@ export default {
             UserDataService.getAll()
                 .then((response) => {
                     this.userList = response.data.map(this.getDisplayUser);
-                    this.filteredUserList = this.userList;
                 })
                 .catch((e) => {
                     console.log(e);
@@ -84,24 +83,23 @@ export default {
         },
         clearFilter() {
             this.filterCriteria = "";
-            this.filteredUserList = this.userList;
-        },
-        filteredData() {
-            const filterText = this.filterCriteria.toLowerCase();
-            this.filteredUserList = this.userList.filter((user) => {
-                return Object.keys(user).some((key) => {
-                    const value = user[key];
-                    if (value !== undefined && value !== null) {
-                        return value.toString().toLowerCase().includes(filterText);
-                    }
-                    return false;
-                });
-            });
         },
 
     },
     mounted() {
         this.retrieveUsers();
+    },
+    computed: {
+        filteredUserList() {
+            return this.userList.filter((user) => {
+                return Object.values(user).some((value) => {
+                    if (value !== undefined && value !== null) {
+                        return value.toString().toLowerCase().includes(this.filterCriteria.toLowerCase());
+                    }
+                    return false;
+                });
+            });
+        },
     },
 };
 </script>
