@@ -78,7 +78,7 @@ export default {
                 username: "",
                 password: "",
                 email: "",
-                active: "",
+                active: false,
                 country: "",
                 gender: ""
             },
